@@ -1,3 +1,21 @@
+# openpilot 0.11.1 + Chrysler WPmod / Jeep WK2
+
+Experimental comma4 variant for Jeep Grand Cherokee WK2 2019-2021 with a
+Retropilot Chrysler WP Mod board. Based on the official `release-mici` build.
+
+**Installer:** `installer.comma.ai/6898838/codex/wk2-wpmod-0.11.1`
+
+- [Installation, behavior and verification (Russian)](wpmod/README_RU.md)
+- [WPmod firmware, stock rollback and Windows flashers](https://github.com/6898838/chrysler-wpmod/releases/tag/wk2-e001be5a)
+- [Stable sunnypilot vs openpilot model comparison](wpmod/SUNNYPILOT_COMPARISON_RU.md)
+
+This changes the WK2 speed gate only when the WPmod marker is detected, and
+ties its LKAS request to active lateral control. The official driving model,
+steering limits, Panda safety and stock ACC remain in use. Eight focused
+host tests passed; installation and vehicle validation are still pending.
+
+---
+
 <div align="center" style="text-align: center;">
 
 <h1>openpilot</h1>
