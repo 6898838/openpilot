@@ -17,6 +17,7 @@ class ChryslerSafetyFlags(IntFlag):
 class ChryslerFlags(IntFlag):
   # Detected flags
   HIGHER_MIN_STEERING_SPEED = 1
+  WP_MOD = 2
 
 
 @dataclass

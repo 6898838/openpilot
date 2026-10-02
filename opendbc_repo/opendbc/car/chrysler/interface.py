@@ -82,6 +82,12 @@ class CarInterface(CarInterfaceBase):
       # TODO: Durango 2020 may be able to steer to zero once above 38 kph
       ret.minSteerSpeed = 17.5  # m/s 17 on the way up, 13 on the way down once engaged.
 
+    # The separate Chrysler WP Mod board advertises a four-byte 0x4FF on CAN0.
+    # Restrict this port to the WK2 platform this package is intended for.
+    if candidate == CAR.JEEP_GRAND_CHEROKEE_2019 and fingerprint[0].get(0x4FF) == 4:
+      ret.flags |= ChryslerFlags.WP_MOD.value
+      ret.minSteerSpeed = 0.
+
     ret.centerToFront = ret.wheelbase * 0.44
     ret.enableBsm = (0x62cc033 if candidate in CUSW_CARS else 0x2d0) in fingerprint[0]
 
